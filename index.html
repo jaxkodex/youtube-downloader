@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hola mundo!</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .search-box, .search-result {
+      width: 500px;
+      margin-left: 100px;
+      position: relative;
+    }
+
+    main {
+      width: 700px;
+      position: relative;
+      margin-left: -350px;
+      left: 50%;
+      padding: 35px 0px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0 1rem;
+      border-radius: 5px;
+      height: 35px;
+      border: solid 1px #ccc;
+      font-size: 20px;
+      color: #333;
+      margin: 12px 0px;
+      box-sizing: border-box;
+    }
+
+    .search-box button {
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      background-color: chocolate;
+      border: 0;
+      float: right;
+    }
+
+    .search-box button i {
+      display: none;
+    }
+
+    .search-box button:disabled {
+      background-color: darksalmon;
+    }
+
+    .search-box button:disabled i {
+      display: inline-block;
+    }
+
+    .search-box::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .search-result {
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .search-result.show {
+      display: block;
+    }
+
+    .search-result .title {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #descargar-wrapper i {
+      display: none;
+    }
+
+    #descargar-wrapper.loading i {
+      display: inline-block;
+    }
+
+    #descargar-wrapper.loading a {
+      display: none;
+    }
+  </style>
+</head>
+<body style="background: white;">
+  <main>
+    <div class="search-box">
+      <label>Youtube URL:</label>
+      <div><input type="text" id="url" /></div>
+      <a id="open-folder" href="#">Abrir descargas</a>
+      <button type="button" id="buscar">Buscar <i class="fa fa-spinner fa-spin"></i></button>
+    </div>
+
+    <div class="search-result" id="search-result">
+      <img id="result-image" src="https://i.ytimg.com/vi/DuGoIWZ4CN8/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyj__oVXMo_5rfzapcH6z24kZg7w" />
+      <h3 class="title" id="result-title">dlb - toxic | official video</h3>
+      <p id="descargar-wrapper">(<a id="descargar" href="#">Descargar</a> <i class="fa fa-spinner fa-spin"></i>)</p>
+      <p id="result"></p>
+    </div>
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+</html>
